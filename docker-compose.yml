@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    image: api-test
+    expose:
+      - ${PORT}
+    depends_on:
+      - db
+    
+  db:
+    image: postgres
